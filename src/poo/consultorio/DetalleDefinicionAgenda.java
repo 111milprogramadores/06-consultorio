@@ -16,7 +16,7 @@ public class DetalleDefinicionAgenda {
     private int duracionIntervalo; //minutos
     private Date horaFin;
     private Date horaInicio;
-    
+    private Date horaInicioIntervalo;
 
     /**
     * Constructor por Defecto.
@@ -31,11 +31,12 @@ public class DetalleDefinicionAgenda {
      * @param horaFin     
      * @param horaInicio     
     */
-    public DetalleDefinicionAgenda(int diaSemana, int duracionIntervalo, Date horaFin, Date horaInicio) {
+    public DetalleDefinicionAgenda(int diaSemana, int duracionIntervalo, Date horaFin, Date horaInicio, Date horaInicioIntervalo) {
         this.diaSemana = diaSemana;
         this.duracionIntervalo = duracionIntervalo;
         this.horaFin = horaFin;
         this.horaInicio = horaInicio;
+        this.horaInicioIntervalo = horaInicioIntervalo;
     }
 
     public int getDiaSemana() {
@@ -69,5 +70,14 @@ public class DetalleDefinicionAgenda {
     public void setHoraInicio(Date horaInicio) {
         this.horaInicio = horaInicio;
     }
+
+    public Date getHoraInicioIntervalo() {
+        return horaInicioIntervalo;
+    }
+
+    public void setHoraInicioIntervalo(Date horaInicioIntervalo) {
+        this.horaInicioIntervalo = horaInicioIntervalo;
+    }
+    
     
 }

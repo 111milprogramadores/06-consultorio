@@ -28,7 +28,7 @@ public class Odontologo {
     * Constructor por Defecto.
     */
     public Odontologo() {
-        agendas = new ArrayList<>();
+        this.agendas = new ArrayList<>();
     }
 
     /**
@@ -39,6 +39,7 @@ public class Odontologo {
      * @param fechaNacimiento            
      * @param nroDocumento            
      * @param nroMatricula            
+     * @param tipoDoc            
     */
     public Odontologo(String apellido, String domicilio, String nombre, Date fechaNacimiento, int nroDocumento, int nroMatricula, TipoDoc tipoDoc) {
         this.apellido = apellido;
@@ -48,6 +49,8 @@ public class Odontologo {
         this.nroDocumento = nroDocumento;
         this.nroMatricula = nroMatricula;
         this.tipoDoc = tipoDoc;
+        
+        this.agendas = new ArrayList<>();
     }
 
     /**
@@ -144,6 +147,15 @@ public class Odontologo {
 
     public void setTipoDoc(TipoDoc tipoDoc) {
         this.tipoDoc = tipoDoc;
+    }
+
+    public void agregarAgenda(Agenda agenda) {
+        this.agendas.add(agenda);
+    }
+
+    @Override
+    public String toString() {
+        return this.apellido + ", " + this.nombre;
     }
     
 }

@@ -22,7 +22,7 @@ public class Agenda {
     * Constructor por Defecto.
     */
     public Agenda() {
-        turnos = new ArrayList<>();
+        this.turnos = new ArrayList<>();
     }
 
     /**
@@ -33,6 +33,8 @@ public class Agenda {
     public Agenda(Date fechaFin, Date fechaInicio) {
         this.fechaFin = fechaFin;
         this.fechaInicio = fechaInicio;
+        
+        this.turnos = new ArrayList<>();
     }
     
     /**
@@ -69,6 +71,10 @@ public class Agenda {
 
     public void setTurnos(List<Turno> turnos) {
         this.turnos = turnos;
+    }
+    
+    public void agregarTurno (Turno turno) {
+        this.turnos.add(turno);
     }
 
 }

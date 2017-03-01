@@ -37,6 +37,11 @@ public class Turno {
         this.paciente = paciente;
     }
 
+    public Turno(Date fechaHora, Estado estado) {
+        this.fechaHora = fechaHora;
+        this.estado = estado;
+    }
+
     public Date getFechaHora() {
         return fechaHora;
     }

@@ -7,6 +7,7 @@ package poo.consultorio;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -84,7 +85,26 @@ public class DefinicionAgenda {
     public void setDetalleDefinicion(List<DetalleDefinicionAgenda> detalleDefinicion) {
         this.detalleDefinicion = detalleDefinicion;
     }
-    
+
+    public void agregarDetalle(DetalleDefinicionAgenda detalle) {
+        this.detalleDefinicion.add(detalle);
+    }
+
+    public DetalleDefinicionAgenda buscarPorDia(int diaDeLaSemana) {
+        DetalleDefinicionAgenda retorno = null;
+        Iterator<DetalleDefinicionAgenda> iter = detalleDefinicion.iterator();
+        
+        while (iter.hasNext()) {
+            DetalleDefinicionAgenda actual = iter.next();
+            
+            if (actual.getDiaSemana() == diaDeLaSemana) {
+                retorno = actual;
+                break;
+            }
+        }
+        
+        return retorno;
+    }
     
     
 }
