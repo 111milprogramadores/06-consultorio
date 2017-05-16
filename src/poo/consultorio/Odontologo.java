@@ -14,6 +14,8 @@ import java.util.List;
  * @author Candelaria
  */
 public class Odontologo {
+    
+    private Integer id;
     private String apellido;
     private String domicilio;
     private String nombre;
@@ -74,8 +76,22 @@ public class Odontologo {
         this.definicionAgenda = definicionAgenda;
         this.agendas = agenda;
     }
-    
-    
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public List<Agenda> getAgendas() {
+        return agendas;
+    }
+
+    public void setAgendas(List<Agenda> agendas) {
+        this.agendas = agendas;
+    }
 
     public String getApellido() {
         return apellido;

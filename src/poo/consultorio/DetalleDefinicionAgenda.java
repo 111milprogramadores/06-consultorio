@@ -12,6 +12,8 @@ import java.util.Date;
  * @author Candelaria
  */
 public class DetalleDefinicionAgenda {
+    
+    private Integer id;
     private int diaSemana;
     private int duracionIntervalo; //minutos
     private Date horaFin;
@@ -37,6 +39,14 @@ public class DetalleDefinicionAgenda {
         this.horaFin = horaFin;
         this.horaInicio = horaInicio;
         this.horaInicioIntervalo = horaInicioIntervalo;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getDiaSemana() {

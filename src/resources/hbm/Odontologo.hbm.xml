@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="poo.consultorio.Odontologo" table="Odontologo">
+      <id name="id" column="id_odontologo">
+          <generator class="increment"/>
+      </id>
+      <property name="apellido" />
+      <property name="domicilio" />
+      <property name="nombre" />
+      <property name="fechaNacimiento" column="fecha_nacimiento" type="java.util.Date" />
+      <property name="nroDocumento" column="nro_documento" />
+      <property name="nroMatricula" column="nro_matricula" />
+      
+      <many-to-one name="definicionAgenda" column="id_definicion_agenda" class="poo.consultorio.DefinicionAgenda" cascade="all" lazy="false" not-null="true" />
+      
+      <bag name="agendas" lazy="false" cascade="all">
+          <key column="id_odontologo" not-null="true" />
+          <one-to-many class="poo.consultorio.Agenda" />
+      </bag>
+      
+      <many-to-one name="tipoDoc" column="id_tipo_doc" class="poo.consultorio.TipoDoc" cascade="all" lazy="false" />
+  </class>
+</hibernate-mapping>

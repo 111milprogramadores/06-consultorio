@@ -10,6 +10,8 @@ package poo.consultorio;
  * @author Candelaria
  */
 public class Estado {
+    
+    private Integer id;
     private String nombre;
     private String descripcion;
 
@@ -27,6 +29,14 @@ public class Estado {
     public Estado(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="poo.consultorio.Agenda" table="Agenda">
+      <id name="id" column="id_agenda">
+          <generator class="increment"/>
+      </id>
+      <property name="fechaInicio" column="fecha_inicio" type="java.util.Date" />
+      <property name="fechaFin" column="fecha_fin" type="java.util.Date" />
+      
+      <bag name="turnos" lazy="false" cascade="all">
+          <key column="id_agenda" not-null="true" />
+          <one-to-many class="poo.consultorio.Turno" />
+      </bag>
+    </class>
+</hibernate-mapping>

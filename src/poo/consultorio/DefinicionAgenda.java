@@ -15,6 +15,8 @@ import java.util.List;
  * @author Candelaria
  */
 public class DefinicionAgenda {
+    
+    private Integer id;
     private int duracionTurno; //en minutos
     private Date fechaCreacion;
     private Date fechaVigencia;
@@ -52,6 +54,14 @@ public class DefinicionAgenda {
         this.fechaCreacion = fechaCreacion;
         this.fechaVigencia = fechaVigencia;
         this.detalleDefinicion = detalleDefinicion;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getDuracionTurno() {

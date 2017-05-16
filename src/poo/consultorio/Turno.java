@@ -12,6 +12,8 @@ import java.util.Date;
  * @author Candelaria
  */
 public class Turno {
+    
+    private Integer id;
     private Date fechaHora;
     private Estado estado;
     private Consulta consulta;
@@ -40,6 +42,14 @@ public class Turno {
     public Turno(Date fechaHora, Estado estado) {
         this.fechaHora = fechaHora;
         this.estado = estado;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getFechaHora() {

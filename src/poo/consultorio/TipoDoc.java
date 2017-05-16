@@ -10,6 +10,8 @@ package poo.consultorio;
  * @author Candelaria
  */
 public class TipoDoc {
+    
+    private Integer id;
     private String nombre;
     private String abreviatura;
 
@@ -27,6 +29,14 @@ public class TipoDoc {
     public TipoDoc(String nombre, String abreviatura) {
         this.nombre = nombre;
         this.abreviatura = abreviatura;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNombre() {

@@ -14,6 +14,8 @@ import java.util.List;
  * @author Candelaria
  */
 public class Agenda {
+    
+    private Integer id;
     private Date fechaFin;
     private Date fechaInicio;
     private List<Turno> turnos;
@@ -47,6 +49,14 @@ public class Agenda {
         this.fechaFin = fechaFin;
         this.fechaInicio = fechaInicio;
         this.turnos = turnos;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getFechaFin() {
