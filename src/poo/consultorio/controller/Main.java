@@ -5,22 +5,14 @@
  */
 package poo.consultorio.controller;
 
-import java.util.Calendar;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import poo.consultorio.DefinicionAgenda;
-import poo.consultorio.DetalleDefinicionAgenda;
-import poo.consultorio.Estado;
-import poo.consultorio.Odontologo;
-import poo.consultorio.TipoDoc;
 import poo.consultorio.dao.EstadosDao;
 import poo.consultorio.dao.EstadosDaoHibernateImpl;
-import poo.consultorio.dao.EstadosDaoImpl;
 import poo.consultorio.dao.OdontologosDao;
 import poo.consultorio.dao.OdontologosDaoHibernateImpl;
-import poo.consultorio.dao.OdontologosDaoImpl;
 
 /**
  *
