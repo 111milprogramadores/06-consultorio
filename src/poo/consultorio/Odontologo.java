@@ -7,6 +7,7 @@ package poo.consultorio;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class Odontologo {
     private Date fechaNacimiento;    
     private int nroDocumento;
     private int nroMatricula;
-    private DefinicionAgenda definicionAgenda;
+    private List<DefinicionAgenda> definicionesAgenda;
     private List<Agenda> agendas;
     private TipoDoc tipoDoc;
     
@@ -63,17 +64,17 @@ public class Odontologo {
      * @param fechaNacimiento            
      * @param nroDocumento            
      * @param nroMatricula            
-     * @param definicionAgenda            
+     * @param definicionesAgenda            
      * @param agenda            
     */
-    public Odontologo(String apellido, String domicilio, String nombre, Date fechaNacimiento, int nroDocumento, int nroMatricula, DefinicionAgenda definicionAgenda, List<Agenda> agenda) {
+    public Odontologo(String apellido, String domicilio, String nombre, Date fechaNacimiento, int nroDocumento, int nroMatricula, List<DefinicionAgenda> definicionesAgenda, List<Agenda> agenda) {
         this.apellido = apellido;
         this.domicilio = domicilio;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.nroDocumento = nroDocumento;
         this.nroMatricula = nroMatricula;
-        this.definicionAgenda = definicionAgenda;
+        this.definicionesAgenda = definicionesAgenda;
         this.agendas = agenda;
     }
 
@@ -141,12 +142,12 @@ public class Odontologo {
         this.nroMatricula = nroMatricula;
     }
 
-    public DefinicionAgenda getDefinicionAgenda() {
-        return definicionAgenda;
+    public List<DefinicionAgenda> getDefinicionesAgenda() {
+        return definicionesAgenda;
     }
 
-    public void setDefinicionAgenda(DefinicionAgenda definicionAgenda) {
-        this.definicionAgenda = definicionAgenda;
+    public void setDefinicionesAgenda(List<DefinicionAgenda> definicionesAgenda) {
+        this.definicionesAgenda = definicionesAgenda;
     }
 
     public List<Agenda> getAgenda() {
@@ -167,6 +168,21 @@ public class Odontologo {
 
     public void agregarAgenda(Agenda agenda) {
         this.agendas.add(agenda);
+    }
+
+    public DefinicionAgenda getDefinicionAgendaVigente() {
+        DefinicionAgenda vigente = null;
+        
+        Iterator<DefinicionAgenda> iter = definicionesAgenda.iterator();
+        while (iter.hasNext()) {
+            DefinicionAgenda actual = iter.next();
+            
+            if (actual.estaVigente()) {
+                vigente = actual;
+            }
+        }
+        
+        return vigente;
     }
 
     @Override

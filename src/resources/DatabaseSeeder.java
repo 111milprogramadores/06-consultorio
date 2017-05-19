@@ -5,6 +5,7 @@
  */
 package resources;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -94,8 +95,11 @@ public class DatabaseSeeder {
         definicionAgendaAriel.agregarDetalle (jueves);
         definicionAgendaAriel.agregarDetalle (viernes);
         
+        ArrayList<DefinicionAgenda> definiciones = new ArrayList<>();
+        definiciones.add(definicionAgendaAriel);
+        
         // ...y se la asignamos a ariel
-        ariel.setDefinicionAgenda(definicionAgendaAriel);
+        ariel.setDefinicionesAgenda(definiciones);
         
         // creamos el DAO para guardarlos
         OdontologosDao odontologosDao = new OdontologosDaoHibernateImpl(sessionFactory);

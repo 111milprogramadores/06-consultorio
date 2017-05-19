@@ -34,7 +34,7 @@ public class ServicioGeneracionDeAgenda {
         Estado disponible = estadosDao.buscarPorNombre("Disponible");
         
         // obtenemos la definicion de agenda del odontologo
-        DefinicionAgenda def = odontologo.getDefinicionAgenda();
+        DefinicionAgenda def = odontologo.getDefinicionAgendaVigente();
         
         // iniciamos el calendario en el 1ero del mes a generar
         Calendar cal = Calendar.getInstance();

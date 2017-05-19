@@ -6,6 +6,7 @@
 package poo.consultorio;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -114,6 +115,14 @@ public class DefinicionAgenda {
         }
         
         return retorno;
+    }
+
+    public boolean estaVigente() {
+        Calendar hoy = Calendar.getInstance();
+        Calendar vigente = Calendar.getInstance();
+        vigente.setTime(fechaVigencia);
+        
+        return hoy.before(vigente);
     }
     
     

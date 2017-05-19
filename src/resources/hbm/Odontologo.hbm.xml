@@ -12,7 +12,10 @@
       <property name="nroDocumento" column="nro_documento" />
       <property name="nroMatricula" column="nro_matricula" />
       
-      <many-to-one name="definicionAgenda" column="id_definicion_agenda" class="poo.consultorio.DefinicionAgenda" cascade="all" lazy="false" not-null="true" />
+      <bag name="definicionesAgenda" lazy="false" cascade="all">
+          <key column="id_odontologo" not-null="true" />
+          <one-to-many class="poo.consultorio.DefinicionAgenda" />
+      </bag>
       
       <bag name="agendas" lazy="false" cascade="all">
           <key column="id_odontologo" not-null="true" />

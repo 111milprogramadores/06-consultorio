@@ -201,7 +201,7 @@ public class PantallaGenerarAgenda extends javax.swing.JFrame {
         Odontologo odontologo = (Odontologo) comboOdontologo.getSelectedItem();
         
         // le pasamos al modelo de la tabla el detalle de la definicion de agenda
-        definicionAgendaModel.setDetalle(odontologo.getDefinicionAgenda().getDetalleDefinicion());
+        definicionAgendaModel.setDetalle(odontologo.getDefinicionAgendaVigente().getDetalleDefinicion());
         
         // actualizamos los datos en la tabla
         definicionAgendaModel.fireTableDataChanged();
