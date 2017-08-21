@@ -15,7 +15,12 @@ import poo.consultorio.Turno;
 import poo.consultorio.dao.EstadosDao;
 
 /**
- *
+ * Capa de servicios para encapsular la lógica de negocios
+ * relacionada con la generación de la Agenda de un Odontólogo.
+ * 
+ * Separamos esta lógica en una clase independiente para mejorar
+ * su legibilidad y mantenibilidad.
+ * 
  * @author joaquinleonelrobles
  */
 public class ServicioGeneracionDeAgenda {
@@ -25,7 +30,17 @@ public class ServicioGeneracionDeAgenda {
     public ServicioGeneracionDeAgenda(EstadosDao estadosDao) {
         this.estadosDao = estadosDao;
     }
-    
+
+    /**
+     * Generamos la Agenda para un Odontólogo en un mes y año pasados por parámetros.
+     * Para cada día de la semana, en base a su Definición de Agenda, creamos Turnos
+     * con el estado disponible.
+     * 
+     * @param odontologo
+     * @param mes
+     * @param anio
+     * @return una Agenda para el Odontólogo en el periodo especificado
+     */
     public Agenda generarAgenda (Odontologo odontologo, Integer mes, Integer anio) {
         // el mes de la clase Calendar es basado en 0: Enero
         System.out.println("Generando Agenda para " + odontologo + ": " + mes + "/" + anio);
